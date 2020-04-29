@@ -1,0 +1,20 @@
+# This .htaccess resides in DocRoot
+Options -Indexes -ExecCGI -Includes -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+## Internal Redirect Loop Protection
+#RewriteCond %{ENV:REDIRECT_STATUS} 200
+#RewriteRule ^ - [L]
+
+RewriteCond "%{REQUEST_URI}" "!^/other_web_app/" [NC]
+RewriteCond "%{REQUEST_URI}" "!^/main_web_app_like_drupal/web/" [NC]
+RewriteRule "^/?(.*)$" "website/web/$1" [L]
+
+#RewriteCond %{REQUEST_FILENAME} -d
+#RewriteRule ^(.*)$ /abc/$1/ [L,R=301]
+
+#RewriteCond %{ENV:REDIRECT_STATUS} 200
+#RewriteCond %{REQUEST_URI} ^(/)?$ [NC]
+#RewriteRule ^(/)?$ /website/public_html/ [L]
