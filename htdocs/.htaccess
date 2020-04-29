@@ -8,9 +8,9 @@ RewriteBase /
 #RewriteCond %{ENV:REDIRECT_STATUS} 200
 #RewriteRule ^ - [L]
 
-RewriteCond "%{REQUEST_URI}" "!^/other_web_app/" [NC]
+RewriteCond "%{REQUEST_URI}" "!^/other_web_app_inside_this/" [NC]
 RewriteCond "%{REQUEST_URI}" "!^/main_web_app_like_drupal/web/" [NC]
-RewriteRule "^/?(.*)$" "website/web/$1" [L]
+RewriteRule "^/?(.*)$" "main_web_app_like_drupal/web/$1" [L]
 
 #RewriteCond %{REQUEST_FILENAME} -d
 #RewriteRule ^(.*)$ /abc/$1/ [L,R=301]
