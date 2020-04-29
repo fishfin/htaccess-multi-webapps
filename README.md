@@ -25,3 +25,4 @@ Assuming "htdocs" is document root:
       |   |_ README.md
       |_ [D] other_web_app
 ```
+Items marked * are provided in this repository.
