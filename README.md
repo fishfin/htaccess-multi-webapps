@@ -23,6 +23,8 @@ Assuming "htdocs" is document root:
       |   |_ load.environment.php
       |   |_ phpunit.xml.dist
       |   |_ README.md
-      |_ [D] other_web_app
+      |_ [D] other_web_apps_inside_this
+          |_ [D] WebApp 2
+          |_ [D] WebApp 3      
 ```
 Items marked * are provided in this repository.
