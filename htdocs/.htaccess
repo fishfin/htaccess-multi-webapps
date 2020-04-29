@@ -17,4 +17,4 @@ RewriteRule "^/?(.*)$" "website/web/$1" [L]
 
 #RewriteCond %{ENV:REDIRECT_STATUS} 200
 #RewriteCond %{REQUEST_URI} ^(/)?$ [NC]
-#RewriteRule ^(/)?$ /website/public_html/ [L]
+#RewriteRule ^(/)?$ /main_web_app_like_drupal/web/ [L]
