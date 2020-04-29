@@ -1,0 +1,13 @@
+# This .htaccess resides in Drupal (or similar webapp), whose user-interface is in a subdir "web"
+Options -Indexes -ExecCGI -Includes -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond "%{REQUEST_URI}" "^/main_web_app_like_drupal/web/(.*)" [NC]
+RewriteRule "^" "%1" [L,R=302]
+
+RewriteCond "%{REQUEST_URI}" "^/main_web_app_like_drupal/(.*)" [NC]
+RewriteCond "%{REQUEST_URI}" "!^/main_web_app_like_drupal/web/" [NC]
+RewriteRule "^" "%1" [L,R=302]
