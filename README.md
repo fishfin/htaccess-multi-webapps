@@ -28,3 +28,10 @@ Assuming "htdocs" is document root:
           |_ [D] WebApp 3      
 ```
 Items marked * are provided in this repository.
+
+If your main webapp is Drupal, add this at the bottom of public_html/sites/default/settings.php
+```PHP
+if (isset($GLOBALS['request']) and '/main_web_app_like_drupal/web/index.php' === $GLOBALS['request']->server->get('SCRIPT_NAME')) {
+  $GLOBALS['request']->server->set('SCRIPT_NAME', '/index.php');
+}
+```
